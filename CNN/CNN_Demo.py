@@ -9,6 +9,7 @@ from glob import glob
 from tqdm import tqdm
 import cv2
 
+#n0 Pain n1 produits laitiers n2 dessert n3 oeuf n4 fruit n5 viande n6 noodles n7 riz n8 fruit de mer n9 soupe
 
 # On définit les variables
 x_train = []

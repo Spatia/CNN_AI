@@ -15,7 +15,7 @@ root.withdraw()
 root.filename = filedialog.askopenfilename(filetypes=(("Image JPEG", "*.jpg"),("Tous les fichiers", "*.*")))
 
 # Charge le modèle de réseau de neurone
-model = load_model("/Users/ck192/Desktop/IA/CNN/model_cnn_monkey.h5")
+model = load_model("/Users/ck192/Desktop/IA/food/model_cnn_food.h5")
 
 # Ouvrir l'image
 nom_img = root.filename
@@ -36,7 +36,28 @@ prediction = model.predict(image)
 # Affiche la possibilité la plus probable (Quel est le chiffre que ça a le plus de chance d'être)
 prediction = np.argmax(prediction)
 
+if prediction == 0:
+	predic = "Pain"
+elif prediction == 1:
+	predic = "Produit laitier"
+elif prediction == 2:
+	predic = "Dessert"
+elif prediction == 3:
+	predic = "Oeuf"
+elif prediction == 4:
+	preic = "Fruit"
+elif prediction == 5:
+	predic = "Viande"
+elif prediction == 6:
+	predic = "Noodles"
+elif prediction == 7:
+	predic = "Riz"
+elif prediction == 8:
+	predic = "Fruits de mer"
+elif prediction == 9:
+	predic = "Soupe"
+
 print("#################################################")
 print("Pour l'image : " + nom_img + " la prediction est : ")
-print(prediction)
+print(predic)
 print("#################################################")
